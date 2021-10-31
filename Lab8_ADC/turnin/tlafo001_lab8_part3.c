@@ -14,8 +14,8 @@
 
 unsigned short volt;
 unsigned char tempB;
-unsigned char MAX = 7;
-unsigned char MIN = 1;
+unsigned short MAX = 588;
+unsigned short MIN = 30;
 
 void ADC_init() {
 	ADCSRA |= (1 << ADEN) | (1 << ADSC) | (1 << ADATE);
@@ -41,6 +41,7 @@ void TickADC() {
 
 int main(void) {
     /* Insert DDR and PORT initializations */
+	DDRA = 0x00; PORTA = 0xFF;
 	DDRB = 0xFF; PORTB = 0x00;
     /* Insert your solution below */
 	ADC_init();
