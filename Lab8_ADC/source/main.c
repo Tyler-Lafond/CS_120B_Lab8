@@ -15,8 +15,8 @@
 unsigned short volt;
 unsigned char voltPerLED;
 unsigned char tempB;
-unsigned char MAX = 7;
-unsigned char MIN = 1;
+unsigned char MAX = 590;
+unsigned char MIN = 31;
 
 void ADC_init() {
 	ADCSRA |= (1 << ADEN) | (1 << ADSC) | (1 << ADATE);
