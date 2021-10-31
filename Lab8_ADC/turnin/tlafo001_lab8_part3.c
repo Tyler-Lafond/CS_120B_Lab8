@@ -14,8 +14,8 @@
 
 unsigned short volt;
 unsigned char tempB;
-unsigned short MAX = 588;
-unsigned short MIN = 30;
+unsigned short MAX = 590;
+unsigned short MIN = 31;
 
 void ADC_init() {
 	ADCSRA |= (1 << ADEN) | (1 << ADSC) | (1 << ADATE);
