@@ -30,41 +30,37 @@ void ADC_init() {
 void TickADC() {
 	volt = ADC;
 	voltPerLED = MAX/8;
-	if (volt >= (voltPerLED * 8))
+	if (volt >= (voltPerLED * 7))
 	{
 		tempB = 0xFF;
 	}
-	else if (volt >= (voltPerLED * 7))
+	else if (volt >= (voltPerLED * 6))
 	{
 		tempB = 0x7F;
 	}
-	else if (volt >= (voltPerLED * 6))
+	else if (volt >= (voltPerLED * 5))
 	{
 		tempB = 0x3F;
 	}
-	else if (volt >= (voltPerLED * 5))
+	else if (volt >= (voltPerLED * 4))
 	{
 		tempB = 0x1F;
 	}
-	else if (volt >= (voltPerLED * 4))
+	else if (volt >= (voltPerLED * 3))
 	{
 		tempB = 0x0F;
 	}
-	else if (volt >= (voltPerLED * 3))
+	else if (volt >= (voltPerLED * 2))
 	{
 		tempB = 0x07;
 	}
-	else if (volt >= (voltPerLED * 2))
+	else if (volt >= voltPerLED)
 	{
 		tempB = 0x03;
 	}
-	else if (volt >= voltPerLED)
-	{
-		tempB = 0x01;
-	}
 	else
 	{
-		tempB = 0x00;
+		tempB = 0x01;
 	}
 	PORTB = tempB;
 }
